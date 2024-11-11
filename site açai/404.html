@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Violeta Açaí</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Violeta Açaí</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#" id="cart-link">Carrinho</a></li>
+        <li><a href="#" id="admin-link">Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Nosso Menu</h2>
+      <div class="menu-item">
+        <img src="pistache-torrado-e-salgado-com-casca-granel-emporio-rosa.jpg" alt="Creme de Pistache">
+        <div>
+          <h3>Creme de Pistache</h3>
+          <p>Adicione Creme de Pistache</p>
+          <button onclick="addToCart('Creme de Pistache')">Adicionar ao Carrinho</button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="Leite-em-Po-Integral-100g.png" alt="Leite em pó">
+        <div>
+          <h3>Leite em pó</h3>
+          <p>Adicione Leite em pó</p>
+          <button onclick="addToCart('Leite em pó')">Adicionar ao Carrinho</button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="leite-condensado-caseiro.webp" alt="Leite condençado">
+        <div>
+          <h3>Leite condençado</h3>
+          <p>AAdicione Leite condençado</p>
+          <button onclick="addToCart('Leite condençado')">Adicionar ao Carrinho</button>
+        </div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="249008-shutterstock-1907121220.jpg" alt="Mousse de Maracujá">
+      <div>
+        <h3>Mousse de Maracujá</h3>
+        <p>Adicione Mousse de Maracujá</p>
+        <button onclick="addToCart('Mousse de Maracujá')">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="mousse-de-morango-no-pote-para-vender-750x750.jpg" alt="Mousse de Morango">
+      <div>
+        <h3>Mousse de Morango</h3>
+        <p>Adicone Mousse de Morango</p>
+        <button onclick="addToCart('Mousse de Morango')">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+    </section>
+
+    <section id="cart-section" style="display: none;">
+      <h2>Seu Carrinho</h2>
+      <ul id="cart-items"></ul>
+      <button onclick="finalizeOrder()">Finalizar Pedido</button>
+    </section>
+  </main>
+
+  <div class="admin-panel" id="admin-panel" style="display: none;">
+    <h2>Painel Admin</h2>
+    <input type="password" id="admin-password" placeholder="Digite a senha">
+    <button onclick="validateAdmin()">Login</button>
+
+    <div id="admin-content" style="display: none;">
+      <h3>Adicionar Novo Item ao Menu</h3>
+      <input type="text" id="new-item-name" placeholder="Nome do Item">
+      <input type="text" id="new-item-description" placeholder="Descrição do Item">
+      <input type="text" id="new-item-image" placeholder="URL da Imagem">
+      <button onclick="addMenuItem()">Adicionar Item</button>
+
+      <h3>Pedidos</h3>
+      <div id="order-list"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
